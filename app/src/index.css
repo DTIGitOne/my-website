@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#background {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
+  position: absolute;
+  animation: colorChangeToPortfolio 10s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#mainLogoSVG {
+  height: 75%;
+  width: 75%;
+  animation: fadeOutLogo 4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#pageElements {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.cls-1 {
+  fill: #fff;
+  fill-opacity: 0;
+  stroke: #fff;
+  stroke-width: 0.5px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1000;
+  animation: mainLogoSVG  5s ease-in-out , colorSVg 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mainLogoSVG {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes colorSVg {
+  0% {
+    fill-opacity: 0;
+  }
+  90% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes fadeOutLogo {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes colorChangeToPortfolio {
+  0% {
+    background: linear-gradient(210deg , #B8B5DB, #EDADC9 , #93BAE8 );
+  }
+  100% {
+    background: linear-gradient(210deg , #4C4177, #2A5470 , #4C4177 );
+  }
+}
