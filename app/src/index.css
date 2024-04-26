@@ -12,6 +12,7 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -25,13 +26,41 @@ code {
   margin: 0;
 }
 
-#background {
-  height: 100%;
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7685;
+}
+
+.background {
+  height: 6700px;
   width: 100%;
   background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
   position: absolute;
-  animation: colorChangeToPortfolio 10s ease-in-out;
-  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.full-screen-section {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; 
+  scroll-snap-type: y mandatory; 
+  scroll-behavior: smooth; 
 }
 
 #mainLogoSVG {
@@ -41,8 +70,19 @@ code {
   animation-fill-mode: forwards;
 }
 
+#menuLogo {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-name: mainLogoSVG2;
+}
+
 #pageElements {
   animation: fadeIn 1.5s ease-in-out;
+}
+
+#menuLogo {
+  cursor: pointer;
 }
 
 .cls-1 {
@@ -59,6 +99,15 @@ code {
 @keyframes mainLogoSVG {
   0% {
     stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mainLogoSVG2 {
+  0% {
+    stroke-dashoffset: 500;
   }
   100% {
     stroke-dashoffset: 0;
