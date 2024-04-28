@@ -1,7 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ScrollElement } from '../Constants/Constants';
+import { Link, Element, animateScroll as scroll } from 'react-scroll';
 
 const Main = () => {
-   
+
+   //reset scrollbar to top after reload
+   if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+   window.onload = () => {
+      window.scrollTo(0, 0);
+    };
+
    //remove loadin element after initial loadin
    setTimeout(() => {
 
@@ -36,14 +47,17 @@ const Main = () => {
                   </g>
                </svg>
             </div>
-            <div id="logoTop" className=""></div>
-            <div id="welcomePage" className="full-screen-section flex justify-center items-center font-thin text-white text-8xl z-30">Welcome to my website</div>
-            <div id="aboutMe" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">about me</div>
-            <div id="lookingFor" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">What i am looking for</div>
-            <div id="skills1" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Skills 1</div>
-            <div id="skills2" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Skills 2</div>
-            <div id="socials" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Social Links</div>
-            <div id="thankVisiting" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Thank you for Visiting</div>
+            <div id='scrollContainer' className='scrollContainer z-30 w-full'>
+               <div id="logoTop" className=""></div>
+               <div id="welcomePage" className="full-screen-section flex justify-center items-center font-thin text-white text-8xl z-30">Welcome to my website</div>
+               <div id="aboutMe" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">about me</div>
+               <div id="lookingFor" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">What i am looking for</div>
+               <div id="skills1" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Skills 1</div>
+               <div id="skills2" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Skills 2</div>
+               <div id="socials" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Social Links</div>
+               <div id="thankVisiting" className=" full-screen-section flex justify-center items-center font-thin text-white text-8xl z-50">Thank you for Visiting</div>
+               <div id='pageContent' className=' full-screen-section2 h-56 w-full bg-white'></div>
+            </div>
          </div>
        </div>
       </>
