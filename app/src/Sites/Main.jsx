@@ -15,26 +15,33 @@ const Main = () => {
    const section8 = useRef();
    const divRef = useRef(null);
    const headlineRef = useRef();
+   const sectionRefs = useRef([]);
 
    useEffect(() => {
-      gsap.fromTo(
-         headlineRef.current,
-         {
-            autoAlpha: 0,
-            y: -10,
-         },
-         {
-            autoAlpha: 1,
-            duration: 1,
-            y: 0,
-            scrollTrigger: {
-               scroller: ".scrollContainer",
-               start: "top 30%",
-               end: "bottom 0%",
-               
+      gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
+         gsap.fromTo(
+            element,
+            {
+               autoAlpha: 0,
+               y: -10,
             },
-         }
-      );
+            {
+               autoAlpha: 1,
+               duration: 1.5,
+               y: 0,
+               scrollTrigger: {
+                  scroller: ".scrollContainer",
+                  start: "top 40%",
+                  end: "bottom 0%",
+                  toggleActions: 'restart none none none',
+               },
+            }
+         );
+      });
+   }, []);
+
+   useEffect(() => {
+      sectionRefs.current = sectionRefs.current.slice(0, 7); // Ensure correct length
    }, []);
 
    //reset scrollbar to top after reload
@@ -64,7 +71,7 @@ const Main = () => {
    }, 4300);
 
    return (
-      <>
+      
        <div id="wholePage" className=" h-full w-full z-30">
         <div id="loadInPage" className=" h-full w-full flex justify-center items-center z-30 fixed" >
            <svg id="mainLogoSVG" className=" z-30" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.25 80.2">
@@ -94,8 +101,8 @@ const Main = () => {
                   </div>
                </div>
                     
-               <div ref={section2} ref={headlineRef} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' elementHeight w-full flex justify-center items-center select-none'>about Me</div>
+               <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
+                  <div ref={headlineRef} className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>about Me</div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section3)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -104,7 +111,7 @@ const Main = () => {
                </div>
 
                <div ref={section3} id="lookingFor" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' elementHeight w-full flex justify-center items-center select-none'>What i am looking for</div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>What i am looking for</div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section4)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -113,7 +120,7 @@ const Main = () => {
                </div>
 
                <div ref={section4} id="skills1" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' elementHeight w-full flex justify-center items-center select-none'>skills 1</div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>skills 1</div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section5)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -122,7 +129,7 @@ const Main = () => {
                </div>
 
                <div ref={section5} id="skills2" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' elementHeight w-full flex justify-center items-center select-none'>skills 2</div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>skills 2</div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section6)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -131,7 +138,7 @@ const Main = () => {
                </div>
 
                <div ref={section6} id="socials" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' elementHeight w-full flex justify-center items-center select-none'>Social Links</div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>Social Links</div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section7)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -140,19 +147,18 @@ const Main = () => {
                </div>
 
                <div ref={section7} id="thankVisiting" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' elementHeight w-full flex justify-center items-center select-none'>Thank you for Visiting</div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>Thank you for Visiting</div>
                   <div className=' scrollHeight w-full flex justify-center'>
-                      <button onClick={() => scrollTo(section8)}  className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
-                         <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
+                      <button   className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                       </button>
                   </div>
                </div>
 
-               <div ref={section8} id='pageContent' className=' full-screen-section2 h-56 w-full bg-white'></div>
+               <div id='pageContent' className=' full-screen-section2 h-56 w-full bg-white'></div>
             </div>
          </div>
        </div>
-      </>
+      
 );
 
 }
