@@ -104,6 +104,20 @@ code {
   animation: fadeIn 1.5s ease-in-out;
 }
 
+.elementHeight {
+  height: 90%;
+}
+
+.scrollHeight {
+  height: 10%;
+}
+
+#downIcon {
+  height: 30%;
+  width: auto;
+  fill: white;
+}
+
 #menuLogo {
   cursor: pointer;
 }
