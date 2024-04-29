@@ -118,6 +118,15 @@ code {
   fill: white;
 }
 
+.backdrop {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 100;
+  display: flex;
+}
+
 #menuLogo {
   cursor: pointer;
 }
@@ -131,6 +140,21 @@ code {
   stroke-dasharray: 1000;
   animation: mainLogoSVG  5s ease-in-out , colorSVg 3s ease-in-out;
   animation-fill-mode: forwards;
+}
+
+.sidebarAni {
+  z-index: 110;
+  animation: sidebarAni 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sidebarAni {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20%;
+  }
 }
 
 @keyframes mainLogoSVG {
