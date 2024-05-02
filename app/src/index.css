@@ -51,7 +51,7 @@ code {
   height: 100%;
   width: 100%;
   background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
-  background-size: 350% 500%;
+  background-size: 350% 550%;
   position: absolute;
   overflow: hidden;
 }
@@ -126,6 +126,12 @@ code {
   position: fixed;
   z-index: 100;
   display: flex;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  transition: opacity 0.3s ease;
+}
+
+.backdrop.closing {
+  opacity: 0; 
 }
 
 #menuLogo {
@@ -145,8 +151,67 @@ code {
 
 .sidebarAni {
   z-index: 110;
-  animation: sidebarAni 0.3s ease-in-out;
+  animation: sidebarAni 0.5s ease-in-out;
   animation-fill-mode: forwards;
+}
+
+.hideSIde {
+  animation: hideSide 1s ease-in-out forwards;
+}
+
+.underline1 {
+  width: 75%;
+  height: 3px;
+  background-color: #000000;
+  margin-top: -10px;
+}
+
+#closeSVG {
+  height: 55%;
+  cursor: pointer;
+}
+
+#close:hover #closeSVG {
+  animation: scale 0.25s ease-in-out forwards;
+}
+
+#close:not(:hover) #closeSVG {
+  animation: scale-out 0.25s ease-in-out forwards;
+}
+
+.cls-3 {
+  fill: #fff;
+}
+
+@keyframes scale {
+  0% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    scale: 1.2;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    scale: 1.2;
+    transform: rotate(180deg);
+  }
+  100% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes hideSide {
+   0% {
+    width: 100%;
+   } 
+   100% {
+    width: 0px;
+   }
 }
 
 @keyframes sidebarAni {
