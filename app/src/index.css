@@ -48,9 +48,10 @@ code {
 }
 
 .background {
-  height: 3000px;
+  height: 100%;
   width: 100%;
   background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
+  background-size: 350% 500%;
   position: absolute;
   overflow: hidden;
 }
