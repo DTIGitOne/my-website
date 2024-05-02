@@ -95,10 +95,24 @@ code {
 }
 
 #menuLogo {
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+#menuLogo:hover .cls-2 {
+  fill: #ffffff;
+  stroke: #ffffff;
+  animation: mainLogoSVG2  1.5s ease-in-out forwards , colorSVg 0.5s ease-in-out ;
+}
+
+.cls-2 {
+  fill: #ffffff;
+  fill-opacity: 0;
+  stroke: #ffffff;
+  stroke-width: 0.5px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1500;
+  animation: mainLogoSVG  5s ease-in-out , colorSVg 3s ease-in-out;
   animation-fill-mode: forwards;
-  animation-name: mainLogoSVG2;
 }
 
 #pageElements {
@@ -134,10 +148,6 @@ code {
   opacity: 0; 
 }
 
-#menuLogo {
-  cursor: pointer;
-}
-
 .cls-1 {
   fill: #fff;
   fill-opacity: 0;
@@ -155,15 +165,119 @@ code {
   animation-fill-mode: forwards;
 }
 
+.sideElementAni {
+  
+  transition: 0.2s ease-in-out;
+}
+
+
 .hideSIde {
   animation: hideSide 1s ease-in-out forwards;
 }
 
 .underline1 {
-  width: 75%;
+  width: 0px;
   height: 3px;
   background-color: #000000;
-  margin-top: -10px;
+  z-index: 50;
+}
+
+#sideBox .btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#sideBox .btn button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	background-color: rgba(65, 65, 65, 0.01);
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(0px);
+   user-select: none;
+}
+
+#sideBox .btn:hover button {
+	letter-spacing: 2px;
+   color: #1A1A1A;
+}
+
+#sideBox .btn button::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 1.5), transparent);
+	transform: skewX(0deg) translate(0);
+	transition: 0.5s;
+	filter: blur(5px);
+}
+
+#sideBox .btn:hover button::before {
+	transform: skewX(0deg) translate(400px);
+}
+
+#sideBox .btn::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 10px;
+	transition: 0.1s;
+	transition-delay: 0.5;
+}
+
+#sideBox .btn:hover::before /*redBlack them width 85%*/ {
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+
+
+#sideBox .btn::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 10px;
+	transition: 0.1s;
+	transition-delay: 0.4;
+}
+
+#sideBox .btn:hover::after /*redBlack them width 85%*/ {
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#sideBox .btn::before, /*chnage 1*/
+#sideBox .btn::after {
+	background: #F3F3F3;
+	box-shadow: 0 0 7px #F3F3F3, 0 0 7px #F3F3F3, 0 0 7px #F3F3F3,
+		0 0 7px #F3F3F3;
+}
+
+.sideElementAni:hover .underline1 {
+  animation: underline1 0.5s ease-in-out forwards;
 }
 
 #closeSVG {
@@ -183,20 +297,38 @@ code {
   fill: #fff;
 }
 
+@keyframes underline1 {
+  0% {
+    width: 0%; 
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes buttonHover {
+  0% {
+    background: linear-gradient(140deg ,#fff , #fff);
+  }
+  100% {
+    background: linear-gradient(140deg ,#E7E7E7 , #EFEFEF);
+  }
+}
+
 @keyframes scale {
   0% {
     scale: 1;
     transform: rotate(0deg);
   }
   100% {
-    scale: 1.2;
+    scale: 1.17;
     transform: rotate(180deg);
   }
 }
 
 @keyframes scale-out {
   0% {
-    scale: 1.2;
+    scale: 1.17;
     transform: rotate(180deg);
   }
   100% {
@@ -234,7 +366,7 @@ code {
 
 @keyframes mainLogoSVG2 {
   0% {
-    stroke-dashoffset: 500;
+    stroke-dashoffset: 1500;
   }
   100% {
     stroke-dashoffset: 0;

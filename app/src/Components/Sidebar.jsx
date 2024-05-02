@@ -1,5 +1,4 @@
 import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const handleClose = () => {
@@ -18,44 +17,22 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 </g>
               </svg>
             </div>
-            <div className="grow flex flex-col items-start justify-center bg-white font-thin text-5xl">
-              <motion.button
-                className="w-full h-24 relative"
-                whileHover={{ scale: 1.00, transition: { duration: 0.3 }, backgroundColor: "#EFEFEF" }}
-                whileTap={{ scale: 0.95 }}
-              >
+            <div id="sideBox" className=" gap-2 grow flex flex-col items-start justify-center bg-white font-thin text-5xl overflow-hidden">
+              <button className=" btn w-full h-24 relative sideElementAni" onClick={handleClose}>
                 <button className="p-4 h-24 w-full text-left relative">Main</button>
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"
-                  style={{ scaleX: 0, transition: { scaleX: { type: "tween" } } }}
-                />
-              </motion.button>
-              <motion.button
-                className="w-full h-24 relative"
-                whileHover={{ scale: 1.00, transition: { duration: 0.3 }, backgroundColor: "#EFEFEF" }}
-                whileTap={{ scale: 0.95 }}
-              >
+                <div className=" underline1 absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"  />
+              </button>
+              <button className=" btn w-full h-24 relative sideElementAni" onClick={handleClose}>
                 <button className="p-4 h-24 w-full text-left relative">Portfolio</button>
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"
-                  style={{ scaleX: 0, transition: { scaleX: { type: "tween" } } }}
-                />
-              </motion.button>
-              <motion.button
-                className="w-full h-24 relative"
-                whileHover={{ scale: 1.00, transition: { duration: 0.3 }, backgroundColor: "#EFEFEF" }}
-                whileTap={{ scale: 0.95 }}
-              >
+                <div className=" underline1 absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"  />
+              </button>
+              <button className=" btn w-full h-24 relative sideElementAni" onClick={handleClose}>
                 <button className="p-4 h-24 w-full text-left relative">Projects</button>
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"
-                  style={{ scaleX: 0, transition: { scaleX: { type: "tween" } } }}
-                  whileHover={{scaleX: 0.75}}
-                />
-              </motion.button>
+                <div className=" underline1 absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"  />
+              </button>
             </div>
           </div>
-          <div className=" w-4/5 h-full" onClick={handleClose}></div>
+          <div className="w-4/5 h-full" onClick={handleClose}></div>
         </div>
       )}
     </>
@@ -63,4 +40,3 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 };
 
 export default Sidebar;
-
