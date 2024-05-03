@@ -47,15 +47,6 @@ code {
   background: #6b7685;
 }
 
-.background {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
-  background-size: 350% 550%;
-  position: absolute;
-  overflow: hidden;
-}
-
 .scrollContainer {
   position: relative;
   overflow-y: auto;
@@ -99,9 +90,12 @@ code {
 }
 
 #menuLogo:hover .cls-2 {
+  fill-opacity: 0;
+  stroke-dasharray: 1500;
   fill: #ffffff;
   stroke: #ffffff;
-  animation: mainLogoSVG2  1.5s ease-in-out forwards , colorSVg 0.5s ease-in-out ;
+  animation: mainLogoSVG2  1.5s ease-in-out , colorSVg 2s ease-in-out ;
+  animation-fill-mode: forwards;
 }
 
 .cls-2 {
@@ -110,7 +104,7 @@ code {
   stroke: #ffffff;
   stroke-width: 0.5px;
   stroke-dashoffset: 0;
-  stroke-dasharray: 1500;
+  stroke-dasharray: 1000;
   animation: mainLogoSVG  5s ease-in-out , colorSVg 3s ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -297,6 +291,18 @@ code {
   fill: #fff;
 }
 
+.closing {
+  animation: sidebarAniClose 0.7s ease-in-out forwards;
+}
+
+.closing2 {
+  animation: fadeOut 0.7s ease-in-out forwards;
+}
+
+.colorChangeToPortfolio {
+  animation: colorChangeToPortfolio 0.7s ease-in-out forwards;
+}
+
 @keyframes underline1 {
   0% {
     width: 0%; 
@@ -355,6 +361,15 @@ code {
   }
 }
 
+@keyframes sidebarAniClose {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
 @keyframes mainLogoSVG {
   0% {
     stroke-dashoffset: 1000;
@@ -406,9 +421,18 @@ code {
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  } 
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes colorChangeToPortfolio {
   0% {
-    background: linear-gradient(210deg , #B8B5DB, #EDADC9 , #93BAE8 );
+    background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
   }
   100% {
     background: linear-gradient(210deg , #4C4177, #2A5470 , #4C4177 );

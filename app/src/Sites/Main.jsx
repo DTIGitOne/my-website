@@ -148,10 +148,6 @@ const Main = () => {
 
                <div ref={section7} id="thankVisiting" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                   <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>Thank you for Visiting</div>
-                  <div className=' scrollHeight w-full flex justify-center'>
-                      <button   className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
-                      </button>
-                  </div>
                </div>
 
                <div id='pageContent' className=' full-screen-section2 h-56 w-full bg-white'></div>
