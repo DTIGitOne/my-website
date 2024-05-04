@@ -15,23 +15,63 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   const handleMain = () => {
+    const mainDrop = document.querySelector(".mainDrop");
+    const pageElements = document.getElementById("pageElements");
+
+    if (window.location.pathname.includes("/Portfolio")) {
+      pageElements.style.opacity = 0;
+    } 
+
+    if (window.location.pathname.includes("/Projects")) {
+      pageElements.style.opacity = 0;
+    } 
+
+    mainDrop.style.opacity = 1;
+
     handleClose();
+
     setTimeout(() => {
       navigate("/Main");
     }, 700);
   };
 
   const handlePortfolio = () => {
-    //here i want to set the opacity of the #portfolioDrop to 1
+    const portfolioDrop = document.querySelector(".portfolioDrop");
+    const pageElements = document.getElementById("pageElements");
+
+    if (window.location.pathname.includes("/Main")) {
+      pageElements.style.opacity = 0;
+    } 
+
+    if (window.location.pathname.includes("/Projects")) {
+      pageElements.style.opacity = 0;
+    } 
+
+    portfolioDrop.style.opacity = 1;
+
     handleClose();
+
     setTimeout(() => {
       navigate("/Portfolio");
     }, 700);
   };
 
   const handleProjects = () => {
-    //here i want to set the opacity of the #projectsDrop to 1
+    const projectsDrop = document.querySelector(".projectsDrop");
+    const pageElements = document.getElementById("pageElements");
+
+    if (window.location.pathname.includes("/Main")) {
+      pageElements.style.opacity = 0;
+    } 
+
+    if (window.location.pathname.includes("/Portfolio")) {
+      pageElements.style.opacity = 0;
+    } 
+
+    projectsDrop.style.opacity = 1;
+
     handleClose();
+
     setTimeout(() => {
       navigate("/Projects");
     }, 700);
