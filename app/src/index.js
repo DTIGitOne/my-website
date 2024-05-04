@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './svg.css';
 import reportWebVitals from './reportWebVitals';
 import { Navigate, Route, Routes , BrowserRouter as Router } from 'react-router-dom';
 import Main from './Sites/Main';

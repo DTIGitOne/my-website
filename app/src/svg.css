@@ -1,0 +1,30 @@
+.iconSize {
+   height: 150px;
+   width: 150px;
+}
+
+.cls-10, .cls-20, .cls-30 {
+   fill: #fff;
+ }
+
+ .cls-20 {
+   opacity: .18;
+ }
+
+ .cls-20, .cls-30 {
+   stroke: #fff;
+   stroke-miterlimit: 10;
+ }
+
+ .cls-11, .cls-21, .cls-31 {
+   fill: #fff;
+ }
+
+ .cls-21 {
+   opacity: .18;
+ }
+
+ .cls-21, .cls-31 {
+   stroke: #fff;
+   stroke-miterlimit: 10;
+}

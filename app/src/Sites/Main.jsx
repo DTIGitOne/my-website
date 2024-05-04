@@ -1,3 +1,5 @@
+import HTMLicon from '../SVGs/HTMLIcon';
+import CSSicon from '../SVGs/CSSIcon';
 import React, { useEffect, useRef, useState } from 'react';
 import { scrollTo } from '../Constants/Constants';
 import { gsap } from 'gsap';
@@ -7,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Main = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
+   const [readMoreClicked, setReadMoreClicked] = useState(false);
    const section1 = useRef();
    const section2 = useRef();
    const section3 = useRef();
@@ -15,6 +18,8 @@ const Main = () => {
    const section6 = useRef();
    const section7 = useRef();
    const divRef = useRef(null);
+   const aboutMeBoxRef = useRef(null);
+   const readMoreButton = useRef(null);
 
    const toggleSidebar = () => {
       setSidebarOpen(!sidebarOpen);
@@ -77,7 +82,21 @@ const Main = () => {
          }, 4300);
       }
    };
-   
+
+   const readMore = () => {
+      if (readMoreClicked) {
+         aboutMeBoxRef.current.style.height = "75%";
+         aboutMeBoxRef.current.style.width = "65%";
+         readMoreButton.current.innerHTML = "Read more...";
+      } else {
+         aboutMeBoxRef.current.style.height = "90%";
+         aboutMeBoxRef.current.style.width = "80%";
+         readMoreButton.current.innerHTML = "go back";
+      }
+      // Toggle the state
+      setReadMoreClicked(!readMoreClicked);
+   }
+    
    return (
        <>
           <div id="wholePage" className=" h-full w-full z-30">
@@ -114,7 +133,23 @@ const Main = () => {
                </div>
                     
                <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>about Me</div>
+                  <div className=' h-28 w-full'></div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>
+                     <div ref={aboutMeBoxRef} id='aboutMeBox'>
+                        <div className=' h-1/6 flex items-center p-10 font-normal'> About me</div>
+                        <div className=' h-4/5 w-full fontSizePages font-light overflow-hidden text-ellipsis p-3'> 
+                        <span className=' font-medium text-3xl'>-M</span>y ipsum, dolor sit amet consectetur adipisicing elit. Maiores quae nostrum voluptatibus, magnam corporis facere. A unde corporis placeat ea labore ipsam, asperiores nemo laudantium hic iste fugit alias voluptates?
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, veniam excepturi reprehenderit, ex obcaecati debitis quaerat laboriosam quis consectetur maiores inventore beatae! Fuga, dicta. Neque laboriosam dolorem rem incidunt fugit!
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nesciunt, voluptatem sit molestias odio rerum corporis minus reprehenderit nostrum at labore cupiditate ipsum nulla consequuntur nisi ad porro sapiente accusantium.
+                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat alias, earum error ratione soluta impedit provident animi maiores porro labore perspiciatis qui eaque reiciendis deleniti cumque quas. Sequi, aut rem?
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem aut itaque eos! In voluptate perspiciatis ab atque labore voluptas tenetur officia, repellat delectus culpa reprehenderit praesentium, molestiae beatae necessitatibus?
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae repellendus, non vitae ullam iusto libero adipisci excepturi natus? Mollitia et magnam corporis recusandae minus officia consequuntur est illo. Assumenda.
+                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit consequuntur facere totam commodi necessitatibus facilis officiis itaque ullam soluta quidem sequi at fuga voluptatibus sint quae culpa, sunt illo laborum.
+                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente sed, labore maxime, consequuntur perferendis modi magni ut nemo aliquid sint inventore quas, pariatur delectus quibusdam nam alias. Pariatur, quidem eligendi.
+                        </div>
+                        <div className=' grow flex justify-end items-center text-2xl font-normal p-2 pr-8'><span ref={readMoreButton} className=' cursor-pointer hover:underline' onClick={readMore}>Read more...</span></div>
+                     </div>
+                  </div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section3)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -123,7 +158,23 @@ const Main = () => {
                </div>
 
                <div ref={section3} id="lookingFor" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>What i am looking for</div>
+               <div className=' h-28 w-full'></div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>
+                     <div className=' h-4/5 w-4/5 flex justify-between items-center flex-col gap-4'>
+                        <div className=' text-6xl'>What i am looking for</div>
+                        <div id='lookingForBox' className=' fontSizePages font-light flex flex-col overflow-hidden'>
+                           <span className=' h-1/2 overflow-hidden'>
+                             <span className=' font-medium text-3xl'>-I</span> am rem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus consectetur unde nemo, beatae labore libero, vel nulla voluptas error earum ad repellendus molestias assumenda natus accusantium quasi qui. Ex.
+                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem obcaecati quibusdam iste fuga, optio illo? Eius expedita quisquam iste magnam! Quam ad inventore consequatur optio blanditiis at iste aspernatur eaque!
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere soluta delectus iure quidem ullam tenetur perferendis deleniti saepe accusamus praesentium odit nemo laboriosam fugiat in nisi, sed tempora. Cumque, eveniet.
+                           </span>
+                           <span className=' h-1/2 overflow-hidden'>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, facere animi assumenda fugit ad sapiente culpa aspernatur deserunt pariatur nisi magni dignissimos beatae incidunt dolores quis id natus officiis voluptatem.
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, explicabo iure dolorum necessitatibus suscipit maxime voluptates soluta fuga nulla ab fugiat laudantium in exercitationem nemo quibusdam dignissimos, voluptatum dolore tenetur?
+                           </span>
+                        </div>
+                     </div>
+                  </div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section4)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -132,7 +183,17 @@ const Main = () => {
                </div>
 
                <div ref={section4} id="skills1" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>skills 1</div>
+               <div className=' h-28 w-full'></div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center flex-col select-none'>
+                     <span id='skillTextBox'>
+                        <div className=' text-8xl pl-4'>Skills</div>
+                        <div id='skillLine1'>
+                           <HTMLicon />
+                           <CSSicon />
+                        </div>
+                     </span>
+                     <span id='skillBox'></span>
+                  </div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section5)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>

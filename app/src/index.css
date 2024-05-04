@@ -360,6 +360,63 @@ code {
   animation: colorChangeToPortfolio 0.7s ease-in-out forwards;
 }
 
+#aboutMeBox {
+  height: 75%;
+  width: 65%;
+  border-radius: 60px;
+  border: solid white 2px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 40px;
+  word-spacing: 1px;
+  transition: 0.7s;
+}
+
+#lookingForBox {
+  height: 90%;
+  width: 75%;
+  border-radius: 60px;
+  border: solid white 2px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 28px;
+  padding-top: 38px;
+  word-spacing: 1px;
+}
+
+#skillTextBox {
+  height: 25%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#skillLine1 {
+  width: 25%;
+  height: 3px;
+  background: linear-gradient(90deg , white , transparent);
+}
+
+#skillBox {
+  height: 75%;
+  width: 100%;
+}
+
+.fontSizePages {
+  font-size: 22px;
+  line-height: 30px;
+}
+
 @keyframes underline1 {
   0% {
     width: 0%; 
