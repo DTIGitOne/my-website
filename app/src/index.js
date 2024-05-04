@@ -6,13 +6,10 @@ import { Navigate, Route, Routes , BrowserRouter as Router } from 'react-router-
 import Main from './Sites/Main';
 import Portfolio from './Sites/Portfolio';
 import Projects from './Sites/Projects';
-import Background from "./Components/Background";
-import LayoutBackground from './Components/LayoutBackground';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <LayoutBackground />
       <Routes>
         <Route path='/' element={<Navigate to="/Main" />} />
         <Route path='/Main' element={<Main />} />

@@ -1,12 +1,10 @@
 import React, { useRef, useEffect , useState } from "react";
-import Background from "./Background";
-import LayoutBackground from "./LayoutBackground";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const [isClosing, setIsClosing] = useState(false);
-  const [gradientColor, setGradientColor] = useState(
-    "linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB )"
-  );
+
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setIsClosing(true);
@@ -17,26 +15,34 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   const handleMain = () => {
-    setGradientColor(
-      "linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB )"
-    );
+    handleClose();
+    navigate("./Main");
   };
 
   const handlePortfolio = () => {
-    setGradientColor(
-      "linear-gradient(210deg , #4C4177, #2A5470 , #4C4177 )"
-    );
+    handleClose();
+    setTimeout(() => {
+      navigate("/Portfolio");
+    }, 700);
   };
 
   const handleProjects = () => {
-    setGradientColor("linear-gradient(230deg , #D8B5FF , #1EAE98 )");
+    navigate("/Projects");
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      const focusableElement = document.querySelector(".btn");
+      if (focusableElement) {
+        focusableElement.focus();
+      }
+    }
+  }, [isOpen]);
 
   return (
     <>
       {isOpen && (
         <>
-          <LayoutBackground gradientColor={gradientColor}/>
           <div id="backdrop" className={`backdrop ${isClosing ? "closing2" : ""}`} onClick={handleClose}>
             <div id="sidebar" className={`sidebarAni w-1/5 h-screen flex flex-col top-0 left-0 ${isClosing ? "closing" : ""}`}>
               <div id="close" className="h-14 w-full flex justify-end items-center p-1 pr-3 bg-black">
@@ -47,16 +53,16 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 </svg>
               </div>
               <div id="sideBox" className=" gap-2 grow flex flex-col items-start justify-center bg-white font-thin text-5xl overflow-hidden">
-                <button className=" btn w-full h-24 relative sideElementAni" onClick={handleMain}>
-                  <button className="p-4 h-24 w-full text-left relative">Main</button>
+                <button className=" btn w-full h-24 relative sideElementAni" >
+                  <button className="p-4 h-24 w-full text-left relative" onClick={handleMain}>Main</button>
                   <div className=" underline1 absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"  />
                 </button>
-                <button className=" btn w-full h-24 relative sideElementAni" onClick={handlePortfolio}>
-                  <button className="p-4 h-24 w-full text-left relative">Portfolio</button>
+                <button className=" btn w-full h-24 relative sideElementAni" >
+                  <button className="p-4 h-24 w-full text-left relative" onClick={handlePortfolio}>Portfolio</button>
                   <div className=" underline1 absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"  />
                 </button>
-                <button className=" btn w-full h-24 relative sideElementAni" onClick={handleProjects}>
-                  <button className="p-4 h-24 w-full text-left relative">Projects</button>
+                <button className=" btn w-full h-24 relative sideElementAni" >
+                  <button className="p-4 h-24 w-full text-left relative" onClick={handleProjects}>Projects</button>
                   <div className=" underline1 absolute bottom-0 left-0 w-full h-0.5 bg-black origin-left"  />
                 </button>
               </div>

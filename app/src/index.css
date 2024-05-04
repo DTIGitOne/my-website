@@ -26,6 +26,11 @@ code {
   margin: 0;
 }
 
+#wholePage {
+  background: linear-gradient(210deg , #93BAE8 , #EDADC9 , #B8B5DB );
+  background-size: 350% 550%;
+}
+
 &::-webkit-scrollbar {
   display: none;
 }
@@ -160,7 +165,6 @@ code {
 }
 
 .sideElementAni {
-  
   transition: 0.2s ease-in-out;
 }
 

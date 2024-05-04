@@ -21,54 +21,63 @@ const Main = () => {
    };
 
    useEffect(() => {
-      gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
-         gsap.fromTo(
-            element,
-            {
-               autoAlpha: 0,
-               y: -10,
-            },
-            {
-               autoAlpha: 1,
-               duration: 1.5,
-               y: 0,
-               scrollTrigger: {
-                  scroller: ".scrollContainer",
-                  start: "top 40%",
-                  end: "bottom 0%",
-                  toggleActions: 'restart none none none',
+      // Run this effect only on the Main page
+      if (isMainPage()) {
+         gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
+            gsap.fromTo(
+               element,
+               {
+                  autoAlpha: 0,
+                  y: -10,
                },
-            }
-         );
-      });
+               {
+                  autoAlpha: 1,
+                  duration: 1.5,
+                  y: 0,
+                  scrollTrigger: {
+                     scroller: ".scrollContainer",
+                     start: "top 40%",
+                     end: "bottom 0%",
+                     toggleActions: 'restart none none none',
+                  },
+               }
+            );
+         });
+      }
    }, []);
 
    //reset scrollbar to top after reload
    if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-
-   window.onload = () => {
-      window.scrollTo(0, 0);
-    };
-
-   //remove loadin element after initial loadin
-   setTimeout(() => {
-
-      let loadInPage = document.getElementById("loadInPage");
-      loadInPage.style.display = "none";
-
-   }, 4200);
-
-   setTimeout(() => {
-
-      let pageElements = document.getElementById("pageElements");
-      pageElements.className = "flex flex-col z-30 justify-center items-center";
-      document.body.style.overflow = "visible";
-      divRef.current.focus();
-
-   }, 4300);
-
+   
+    const isMainPage = () => {
+      const pathname = window.location.pathname;
+      // Check if the pathname contains "/Main"
+      const isMain = pathname.includes("/Main");
+      
+      if (isMain) {
+         window.scrollTo(0, 0);
+         
+         // Remove loading element after initial loading
+         setTimeout(() => {
+            let loadInPage = document.getElementById("loadInPage");
+            if (loadInPage) {
+               loadInPage.style.display = "none";
+            }
+         }, 4200);
+         
+         setTimeout(() => {
+            let pageElements = document.getElementById("pageElements");
+            if (pageElements) {
+               pageElements.className = "flex flex-col z-30 justify-center items-center";
+               document.body.style.overflow = "visible";
+               divRef.current.focus();
+            }
+         }, 4300);
+      }
+   };
+   
    return (
        
        <div id="wholePage" className=" h-full w-full z-30">
