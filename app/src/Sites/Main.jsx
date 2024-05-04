@@ -79,8 +79,10 @@ const Main = () => {
    };
    
    return (
-       
-       <div id="wholePage" className=" h-full w-full z-30">
+       <>
+          <div id="wholePage" className=" h-full w-full z-30">
+          <div id='portfolioDrop' style={{ opacity: 0 }}></div>
+          <div id='projectsDrop' style={{ opacity: 0 }}></div>
          <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
         <div id="loadInPage" className=" h-full w-full flex justify-center items-center z-30 fixed" >
            <svg id="mainLogoSVG" className=" z-30" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.25 80.2">
@@ -163,6 +165,8 @@ const Main = () => {
             </div>
          </div>
        </div>
+       </>
+       
       
 );
 

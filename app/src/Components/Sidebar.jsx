@@ -16,10 +16,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const handleMain = () => {
     handleClose();
-    navigate("./Main");
+    setTimeout(() => {
+      navigate("/Main");
+    }, 700);
   };
 
   const handlePortfolio = () => {
+    //here i want to set the opacity of the #portfolioDrop to 1
     handleClose();
     setTimeout(() => {
       navigate("/Portfolio");
@@ -27,7 +30,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   const handleProjects = () => {
-    navigate("/Projects");
+    //here i want to set the opacity of the #projectsDrop to 1
+    handleClose();
+    setTimeout(() => {
+      navigate("/Projects");
+    }, 700);
   };
 
   useEffect(() => {
