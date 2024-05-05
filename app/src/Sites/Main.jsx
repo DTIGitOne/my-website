@@ -5,6 +5,10 @@ import Reacticon from '../SVGs/ReactIcon';
 import Jqueryicon from '../SVGs/JQuery';
 import Tailwindicon from '../SVGs/TailwindIcon';
 import Sassicon from '../SVGs/SassIcon';
+import Illustratoricon from '../SVGs/IllustratorIcon';
+import Premiericon from '../SVGs/PremierIcon';
+import Photoshopicon from '../SVGs/PhotoshopIcon';
+import Figmaicon from '../SVGs/FigmaIcon';
 import React, { useEffect, useRef, useState } from 'react';
 import { scrollTo } from '../Constants/Constants';
 import { gsap } from 'gsap';
@@ -195,13 +199,34 @@ const Main = () => {
                         <div id='skillLine1'></div>
                      </span>
                      <span id='skillBox'>
-                       <HTMLicon />
-                       <CSSicon />
-                       <JSicon />
-                       <Reacticon />
-                       <Jqueryicon />
-                       <Tailwindicon />
-                       <Sassicon />
+                       <div className='gridItem'>
+                         <HTMLicon />
+                         HTML
+                       </div>
+                       <div className='gridItem'>
+                         <CSSicon />
+                         CSS
+                       </div>
+                       <div className='gridItem'>
+                        <JSicon />
+                        JavaScript
+                       </div>
+                       <div className='gridItem'>
+                        <Reacticon />
+                        ReactJS
+                       </div>
+                       <div className='gridItem'>
+                        <Jqueryicon />
+                        JQuery
+                       </div>
+                       <div className='gridItem'>
+                        <Tailwindicon />
+                        Tailwind CSS
+                       </div>
+                       <div className='gridItem'>
+                        <Sassicon />
+                        SASS  
+                       </div>
                      </span>
                   </div>
                   <div className=' scrollHeight w-full flex justify-center'>
@@ -212,7 +237,35 @@ const Main = () => {
                </div>
 
                <div ref={section5} id="skills2" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>skills 2</div>
+               <div className=' h-28 w-full'></div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none flex-col text-2xl'>
+                     <div id='skillBox2Top'>
+                        <div id='skillBox2Text' className=' select-text font-light'>
+                          <span className=' font-normal text-4xl'>B</span>esides the skills i have in Frontend devlopment i am also skilled in a  variety of programs used to design  and   sketch out projects and videos used  for development. I have named all of the programs i am  comftarble with  
+                          using  but if it is needed i dont think that  there would be a problem for me to  start using  any other program aswell.
+                        </div>
+                     </div>
+                     <div id='skillBox2Bottom'>
+                        <div id='skills2items'>
+                         <div className='gridItem justify-center text-center'>
+                          <Illustratoricon />
+                          Adobe <br /> Illustrator
+                         </div>
+                         <div className='gridItem justify-center text-center'>
+                          <Premiericon />
+                          Adobe <br /> Premier
+                         </div>
+                         <div className='gridItem justify-center text-center'>
+                          <Photoshopicon />
+                          Adobe <br /> Photoshop
+                         </div>
+                         <div className='gridItem justify-center text-center'>
+                          <Figmaicon />
+                           <br /> Figma
+                         </div>
+                        </div>
+                     </div>
+                  </div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section6)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
