@@ -16,15 +16,20 @@
    stroke-miterlimit: 10;
  }
 
+
  .cls-11, .cls-21, .cls-31 {
-   fill: #fff;
- }
+  fill: #fff;
+}
 
- .cls-21 {
-   opacity: .18;
- }
+.cls-41 {
+  fill: none;
+}
 
- .cls-21, .cls-31 {
-   stroke: #fff;
-   stroke-miterlimit: 10;
+.cls-41, .cls-21, .cls-31 {
+  stroke: #fff;
+  stroke-miterlimit: 10;
+}
+
+.cls-21 {
+  opacity: .18;
 }

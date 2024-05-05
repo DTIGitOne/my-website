@@ -1,5 +1,10 @@
 import HTMLicon from '../SVGs/HTMLIcon';
 import CSSicon from '../SVGs/CSSIcon';
+import JSicon from '../SVGs/JSIcon';
+import Reacticon from '../SVGs/ReactIcon';
+import Jqueryicon from '../SVGs/JQuery';
+import Tailwindicon from '../SVGs/TailwindIcon';
+import Sassicon from '../SVGs/SassIcon';
 import React, { useEffect, useRef, useState } from 'react';
 import { scrollTo } from '../Constants/Constants';
 import { gsap } from 'gsap';
@@ -137,7 +142,7 @@ const Main = () => {
                   <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>
                      <div ref={aboutMeBoxRef} id='aboutMeBox'>
                         <div className=' h-1/6 flex items-center p-10 font-normal'> About me</div>
-                        <div className=' h-4/5 w-full fontSizePages font-light overflow-hidden text-ellipsis p-3'> 
+                        <div className=' h-4/5 w-full fontSizePages font-light overflow-hidden text-ellipsis p-3 select-text'> 
                         <span className=' font-medium text-3xl'>-M</span>y ipsum, dolor sit amet consectetur adipisicing elit. Maiores quae nostrum voluptatibus, magnam corporis facere. A unde corporis placeat ea labore ipsam, asperiores nemo laudantium hic iste fugit alias voluptates?
                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, veniam excepturi reprehenderit, ex obcaecati debitis quaerat laboriosam quis consectetur maiores inventore beatae! Fuga, dicta. Neque laboriosam dolorem rem incidunt fugit!
                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nesciunt, voluptatem sit molestias odio rerum corporis minus reprehenderit nostrum at labore cupiditate ipsum nulla consequuntur nisi ad porro sapiente accusantium.
@@ -187,12 +192,17 @@ const Main = () => {
                   <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center flex-col select-none'>
                      <span id='skillTextBox'>
                         <div className=' text-8xl pl-4'>Skills</div>
-                        <div id='skillLine1'>
-                           <HTMLicon />
-                           <CSSicon />
-                        </div>
+                        <div id='skillLine1'></div>
                      </span>
-                     <span id='skillBox'></span>
+                     <span id='skillBox'>
+                       <HTMLicon />
+                       <CSSicon />
+                       <JSicon />
+                       <Reacticon />
+                       <Jqueryicon />
+                       <Tailwindicon />
+                       <Sassicon />
+                     </span>
                   </div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section5)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>

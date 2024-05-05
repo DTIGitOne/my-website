@@ -410,6 +410,9 @@ code {
 #skillBox {
   height: 75%;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
 }
 
 .fontSizePages {
