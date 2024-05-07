@@ -3,6 +3,13 @@
    width: 40%;
 }
 
+@media only screen and (max-width: 767px) {
+  .iconSize {
+    height: 55%;
+    width: 55%;
+ }
+}
+
 .cls-10, .cls-20, .cls-30 {
    fill: #fff;
  }
