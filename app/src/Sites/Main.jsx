@@ -9,12 +9,15 @@ import Illustratoricon from '../SVGs/IllustratorIcon';
 import Premiericon from '../SVGs/PremierIcon';
 import Photoshopicon from '../SVGs/PhotoshopIcon';
 import Figmaicon from '../SVGs/FigmaIcon';
+import Linkdinicon from '../SVGs/LinkdINIcon';
+import Instagramicon from '../SVGs/InstagramIcon';
+import Facebookicon from '../SVGs/FacebookIcon';
+import Githubicon from '../SVGs/Github';
 import React, { useEffect, useRef, useState } from 'react';
+import { openURLInNewWindow } from '../Constants/Constants';
 import { scrollTo } from '../Constants/Constants';
-import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
-gsap.registerPlugin(ScrollTrigger) 
 
 const Main = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -34,31 +37,19 @@ const Main = () => {
       setSidebarOpen(!sidebarOpen);
    };
 
+  const navigate = useNavigate();
+
    useEffect(() => {
       // Run this effect only on the Main page
       if (isMainPage()) {
-         gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
-            gsap.fromTo(
-               element,
-               {
-                  autoAlpha: 0,
-                  y: -10,
-               },
-               {
-                  autoAlpha: 1,
-                  duration: 1.5,
-                  y: 0,
-                  scrollTrigger: {
-                     scroller: ".scrollContainer",
-                     start: "top 40%",
-                     end: "bottom 0%",
-                     toggleActions: 'restart none none none',
-                  },
-               }
-            );
-         });
+         
       }
    }, []);
+   
+   const copyToClipboard = () => {
+      const email = 'dammirtaljanovic@gmail.com';
+      navigator.clipboard.writeText(email);
+   };
 
    //reset scrollbar to top after reload
    if ('scrollRestoration' in window.history) {
@@ -105,6 +96,44 @@ const Main = () => {
       // Toggle the state
       setReadMoreClicked(!readMoreClicked);
    }
+
+   const handlePortfolio = () => {
+      const portfolioDrop = document.querySelector(".portfolioDrop");
+      const pageElements = document.getElementById("pageElements");
+  
+      if (window.location.pathname.includes("/Main")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      if (window.location.pathname.includes("/Projects")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      portfolioDrop.style.opacity = 1;
+  
+      setTimeout(() => {
+        navigate("/Portfolio");
+      }, 700);
+    };
+
+    const handleProjects = () => {
+      const projectsDrop = document.querySelector(".projectsDrop");
+      const pageElements = document.getElementById("pageElements");
+  
+      if (window.location.pathname.includes("/Main")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      if (window.location.pathname.includes("/Portfolio")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      projectsDrop.style.opacity = 1;
+  
+      setTimeout(() => {
+        navigate("/Projects");
+      }, 700);
+    };
     
    return (
        <>
@@ -143,7 +172,7 @@ const Main = () => {
                     
                <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                   <div className=' h-28 w-full'></div>
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>
+                  <div className='  elementHeight w-full flex justify-center items-center select-none'>
                      <div ref={aboutMeBoxRef} id='aboutMeBox'>
                         <div className=' h-1/6 flex items-center p-10 font-normal'> About me</div>
                         <div className=' h-4/5 w-full fontSizePages font-light overflow-hidden text-ellipsis p-3 select-text'> 
@@ -168,7 +197,7 @@ const Main = () => {
 
                <div ref={section3} id="lookingFor" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                <div className=' h-28 w-full'></div>
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>
+                  <div className='  elementHeight w-full flex justify-center items-center select-none'>
                      <div className=' h-4/5 w-4/5 flex justify-between items-center flex-col gap-4'>
                         <div className=' text-6xl'>What i am looking for</div>
                         <div id='lookingForBox' className=' fontSizePages font-light flex flex-col overflow-hidden'>
@@ -193,7 +222,7 @@ const Main = () => {
 
                <div ref={section4} id="skills1" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                <div className=' h-28 w-full'></div>
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center flex-col select-none'>
+                  <div className='  elementHeight w-full flex justify-center items-center flex-col select-none'>
                      <span id='skillTextBox'>
                         <div className=' text-8xl pl-4'>Skills</div>
                         <div id='skillLine1'></div>
@@ -238,7 +267,7 @@ const Main = () => {
 
                <div ref={section5} id="skills2" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                <div className=' h-28 w-full'></div>
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none flex-col text-2xl'>
+                  <div className='  elementHeight w-full flex justify-center items-center select-none flex-col text-2xl'>
                      <div id='skillBox2Top'>
                         <div id='skillBox2Text' className=' select-text font-light'>
                           <span className=' font-normal text-4xl'>B</span>esides the skills i have in Frontend devlopment i am also skilled in a  variety of programs used to design  and   sketch out projects and videos used  for development. I have named all of the programs i am  comftarble with  
@@ -249,19 +278,19 @@ const Main = () => {
                         <div id='skills2items'>
                          <div className='gridItem justify-center text-center'>
                           <Illustratoricon />
-                          Adobe <br /> Illustrator
+                          <span className=' h-1/5'>Adobe <br /> Illustrator</span>
                          </div>
                          <div className='gridItem justify-center text-center'>
                           <Premiericon />
-                          Adobe <br /> Premier
+                          <span className=' h-1/5'>Adobe <br /> Premier</span>
                          </div>
                          <div className='gridItem justify-center text-center'>
                           <Photoshopicon />
-                          Adobe <br /> Photoshop
+                          <span className=' h-1/5'>Adobe <br /> Photoshop</span>
                          </div>
                          <div className='gridItem justify-center text-center'>
                           <Figmaicon />
-                           <br /> Figma
+                          <span className=' h-1/5'>Figma</span>
                          </div>
                         </div>
                      </div>
@@ -274,7 +303,38 @@ const Main = () => {
                </div>
 
                <div ref={section6} id="socials" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>Social Links</div>
+               <div className=' h-28 w-full'></div>
+                  <div className='  elementHeight w-full flex justify-center items-center select-none flex-col'>
+                     <div id='topSocial' className=' w-full h-1/3 flex justify-center items-center flex-col gap-2'>
+                        <span>Social Links</span>
+                        <div id='socialLine'></div>
+                     </div>
+                     <div id='middleSocial' className=' w-3/5 h-1/3 flex justify-around items-center text-3xl text-center'>
+                     <span className=' flex justify-center items-center flex-col gap-2' onClick={() => openURLInNewWindow("https://www.linkedin.com/in/damir-taljanovic-2813b02ab/")}>
+                       <Linkdinicon />
+                       LinkdIN
+                     </span>
+                     <span className=' flex justify-center items-center flex-col gap-2' onClick={() => openURLInNewWindow("https://www.instagram.com/damir.taljanovic/?hl=en")}>
+                       <Instagramicon />
+                       Instagram
+                     </span>
+                     <span className=' flex justify-center items-center flex-col gap-2' onClick={() => openURLInNewWindow("https://www.facebook.com/damir.taljanovic/?locale=bs_BA")}>
+                       <Facebookicon />
+                       Facebook
+                     </span>
+                     <span className=' flex justify-center items-center flex-col gap-2' onClick={() => openURLInNewWindow("https://github.com/DTIGitOne")}>
+                       <Githubicon />
+                       Github
+                     </span>
+                     </div>
+                     <div id='bottomSocial' className=' w-full h-1/3 flex justify-center items-center flex-col text-5xl font-thin gap-3'>
+                        Contact Mail:
+                        <span className=' flex flex-col items-center text-3xl font-normal gap-1 cursor-pointer select-text' onClick={copyToClipboard}>
+                           dammirtaljanovic@gmail.com
+                           <span className=' text-2xl font-extralight select-none'>Click to copy</span>
+                        </span>
+                     </div>
+                  </div>
                   <div className=' scrollHeight w-full flex justify-center'>
                       <button onClick={() => scrollTo(section7)} className='flex flex-col gap-2 p-1 items-center select-none justify-center'>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
@@ -283,9 +343,22 @@ const Main = () => {
                </div>
 
                <div ref={section7} id="thankVisiting" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>Thank you for Visiting</div>
+               <div className=' h-28 w-full'></div>
+                  <div className='  elementHeight w-full flex justify-center items-center select-none flex-col'>
+                     <div className=' w-full h-1/3 flex justify-center items-center flex-col gap-2'>
+                        <span>Thank you for visiting</span>
+                        <div id='socialLine'></div>
+                     </div>
+                     <div className=' w-full h-2/3 flex flex-col items-center font-thin text-5xl gap-10'>
+                        Also check out:
+                        <span className=' text-4xl flex justify-center items-center flex-col gap-4'>
+                           <div className=' font-light cursor-pointer' onClick={handlePortfolio}>My Portfolio</div>
+                           &
+                           <div className=' font-light cursor-pointer' onClick={handleProjects}>My Projects</div>
+                        </span>
+                     </div>
+                  </div>
                </div>
-
                <div id='pageContent' className=' full-screen-section2 h-56 w-full bg-white'></div>
             </div>
          </div>

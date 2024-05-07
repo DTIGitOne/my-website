@@ -360,6 +360,10 @@ code {
   animation: colorChangeToPortfolio 0.7s ease-in-out forwards;
 }
 
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
 #aboutMeBox {
   height: 75%;
   width: 65%;
@@ -459,6 +463,12 @@ code {
   width: 75%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+#socialLine {
+  width: 50%;
+  height: 4px;
+  background: radial-gradient(white , transparent);
 }
 
 .fontSizePages {

@@ -1,6 +1,6 @@
 .iconSize {
-   height: 45%;
-   width: 45%;
+   height: 40%;
+   width: 40%;
 }
 
 .cls-10, .cls-20, .cls-30 {
@@ -32,4 +32,19 @@
 
 .cls-21 {
   opacity: .18;
+}
+
+
+.cls-111, .cls-222 {
+  fill: #fff;
+}
+
+.cls-222 {
+  opacity: .18;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+}
+
+.cls-333 {
+  fill: none;
 }
