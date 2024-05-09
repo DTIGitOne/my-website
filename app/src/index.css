@@ -534,6 +534,75 @@ code {
   width: 80%;
 }
 
+#ProjectsMainBox {
+  height: 75%;
+  width: 75%;
+  border-radius: 60px;
+  border: solid white 2px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 28px;
+  padding-top: 38px;
+  word-spacing: 1px;
+  font-size: 25px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#projectBoxTop {
+  height: 90%;
+  width: 100%;
+  display: flex;
+}
+
+#projectBoxBottom {
+  height: 10%;
+  width: 100%;
+}
+
+#leftBoxTop {
+  width: 50%;
+  height: 100%;
+}
+
+#leftBoxTopUpper {
+  width: 100%;
+  height: 90%;
+}
+
+#leftBoxTopLower {
+  width: 100%;
+  height: 10%;
+}
+
+#rightBoxTop {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+}
+
+.topGrid {
+  grid-area: top;
+}
+.bottomLeftGrid{
+  grid-area: bottom-left;
+}
+.bottomRightGrid{
+  grid-area: bottom-right;
+}
+#rightBoxTop {
+  grid-template-areas:
+    'top top'
+    'bottom-left bottom-right';
+}
+.topGrid {
+  grid-column: span 2;
+}
 
 
 @media only screen and (max-width: 767px) {

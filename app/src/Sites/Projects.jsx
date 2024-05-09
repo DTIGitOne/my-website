@@ -1,6 +1,7 @@
 import { useRef , useState , useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import { scrollTo } from '../Constants/Constants';
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -11,6 +12,8 @@ const Projects = () => {
    const toggleSidebar = () => {
       setSidebarOpen(!sidebarOpen);
    };
+
+   const navigate = useNavigate();
 
    useEffect(() => {
       // Run this effect only on the Main page
@@ -50,6 +53,48 @@ const Projects = () => {
       }
    };
 
+   const handleMain = () => {
+      const mainDrop = document.querySelector(".mainDrop");
+      const pageElements = document.getElementById("pageElements");
+  
+      if (window.location.pathname.includes("/Portfolio")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      if (window.location.pathname.includes("/Projects")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      mainDrop.style.opacity = 1;
+  
+      setTimeout(() => {
+        navigate("/Main");
+      }, 700);
+    };
+  
+    const handlePortfolio = () => {
+      const portfolioDrop = document.querySelector(".portfolioDrop");
+      const pageElements = document.getElementById("pageElements");
+  
+      if (window.location.pathname.includes("/Main")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      if (window.location.pathname.includes("/Projects")) {
+        pageElements.style.opacity = 0;
+      } 
+  
+      portfolioDrop.style.opacity = 1;
+  
+      setTimeout(() => {
+        navigate("/Portfolio");
+      }, 700);
+    };
+
+    const handleSectionClick = (sectionRef) => {
+      scrollTo(sectionRef);
+   };
+
    return (
       <div id="wholePage3" className=" h-full w-full z-30">
           <div className="mainDrop"></div>
@@ -78,10 +123,56 @@ const Projects = () => {
                </div>
                     
                <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-                  <div className=' animate-on-scroll elementHeight w-full flex justify-center items-center select-none'>element</div>
+               <div className=' h-48 w-full'></div>
+                  <div className=' animate-on-scroll elementHeight w-full flex justify-center select-none'>
+                     <div id="ProjectsMainBox">
+                        <div id="projectBoxTop">
+                           <div id="leftBoxTop">
+                              <div id="leftBoxTopUpper"></div>
+                              <div id="leftBoxTopLower"></div>
+                           </div>
+                           <div id="rightBoxTop">
+                              <span className="topGrid flex justify-center items-center">a</span>
+                              <span className="bottomLeftGrid flex justify-center items-center">a</span>
+                              <span className="bottomRightGrid flex justify-center items-center">a</span>
+                           </div>
+                        </div>
+                        <div id="projectBoxBottom"></div>
+                     </div>
+                  </div>
                </div>
 
-               <div id='pageContent' className=' full-screen-section2 h-56 w-full bg-white'></div>
+               <div id='pageContent' className=' full-screen-section2 h-56 w-full bg-white flex'>
+                  <div className=' h-full w-1/3 flex select-none'>
+                     <div className=' h-full w-1/2 flex flex-col gap-2 p-8'>
+                        Pages:
+                        <ul id='elemetsPage'>
+                           <li className=' cursor-pointer' onClick={handleMain}>- Home</li>
+                           <li className=' cursor-pointer' onClick={() => handleSectionClick(section1)}>- Projects</li>
+                           <li className=' cursor-pointer' onClick={handlePortfolio}>- Portfolio</li>
+                        </ul>
+                     </div>
+                     <div className=' h-full w-1/2 flex flex-col gap-2 pt-8'>
+                     Content:
+                        <ul id='elemetsPage2'>
+                           <li className=' cursor-pointer' onClick={() => handleSectionClick(section1)}>- Welcome</li>
+                           <li className=' cursor-pointer' onClick={() => handleSectionClick(section2)}>- My Projects</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div className=' h-full w-1/3 flex justify-center items-end text-4xl pb-2'>
+                     Made by Damir
+                  </div>
+                  <div className=' h-full w-1/3 flex flex-col'>
+                     <div className=' h-1/2 w-full flex justify-end items-center p-8'>
+                        Contact: <br/>
+                        dammirtaljanovic@gmail.com
+                     </div>
+                     <div className=' h-1/2 w-full flex justify-end items-end pr-8 pb-4 select-none'>
+                      &copy; Copyright
+                     </div>
+                  </div>
+               </div>
 
             </div>
          </div>
