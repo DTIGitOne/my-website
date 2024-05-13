@@ -3,11 +3,15 @@ import webisteImage1 from '../Images/myWebsite1.PNG'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from 'react-router-dom';
+import { openURLInNewWindow } from '../Constants/Constants';
 
 const CaraouselMenu = () => {
   const [oldSlide, setOldSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlide2, setActiveSlide2] = useState(0);
+
+  const navigate = useNavigate();
 
   const settings = {
     dots: true,
@@ -35,7 +39,7 @@ const CaraouselMenu = () => {
               <p className=" font-light text-2xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta eum enim aperiam ad, mollitia nostrum asperiores? Assumenda aliquam laboriosam consectetur obcaecati expedita, voluptatibus numquam cupiditate quia perferendis voluptatum odit maiores.</p>
             </div>
             <div id="leftBoxTopLower">
-              <h3 className=" text-3xl font-medium"><button>Check out</button></h3>
+              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://github.com/DTIGitOne/my-website")}>Check out</button></h3>
             </div>
           </div>
           <div id="rightBoxTop">
@@ -52,7 +56,7 @@ const CaraouselMenu = () => {
           <div id="leftBoxTop">
             <div id="leftBoxTopUpper">
               <h2 className=" text-5xl font-normal pl-2">My website</h2>
-              <p className=" font-light text-2xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta eum enim aperiam ad, mollitia nostrum asperiores? Assumenda aliquam laboriosam consectetur obcaecati expedita, voluptatibus numquam cupiditate quia perferendis voluptatum odit maiores.</p>
+              <p className=" font-light text-2xl"></p>
             </div>
             <div id="leftBoxTopLower">
               <h3 className=" text-3xl font-medium"><button>Check out</button></h3>
@@ -72,7 +76,7 @@ const CaraouselMenu = () => {
           <div id="leftBoxTop">
             <div id="leftBoxTopUpper">
               <h2 className=" text-5xl font-normal pl-2">My website</h2>
-              <p className=" font-light text-2xl"></p>
+              <p className=" font-light text-2xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta eum enim aperiam ad, mollitia nostrum asperiores? Assumenda aliquam laboriosam consectetur obcaecati expedita, voluptatibus numquam cupiditate quia perferendis voluptatum odit maiores.</p>
             </div>
             <div id="leftBoxTopLower">
               <h3 className=" text-3xl font-medium"><button>Check out</button></h3>
