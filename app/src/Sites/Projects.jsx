@@ -1,7 +1,9 @@
+import webisteImage1 from '../Images/myWebsite1.PNG'
 import { useRef , useState , useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import { scrollTo } from '../Constants/Constants';
 import { useNavigate } from "react-router-dom";
+import CaraouselMenu from '../Components/CaraouselMenu';
 
 const Projects = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -126,18 +128,8 @@ const Projects = () => {
                <div className=' h-48 w-full'></div>
                   <div className=' animate-on-scroll elementHeight w-full flex justify-center select-none'>
                      <div id="ProjectsMainBox">
-                        <div id="projectBoxTop">
-                           <div id="leftBoxTop">
-                              <div id="leftBoxTopUpper"></div>
-                              <div id="leftBoxTopLower"></div>
-                           </div>
-                           <div id="rightBoxTop">
-                              <span className="topGrid flex justify-center items-center">a</span>
-                              <span className="bottomLeftGrid flex justify-center items-center">a</span>
-                              <span className="bottomRightGrid flex justify-center items-center">a</span>
-                           </div>
-                        </div>
-                        <div id="projectBoxBottom"></div>
+                       <CaraouselMenu />
+                       <div id='projectBoxBottom'></div>
                      </div>
                   </div>
                </div>

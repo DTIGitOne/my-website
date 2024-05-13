@@ -272,7 +272,7 @@ code {
 	z-index: 1;
 	transition: 0.5s;
 	backdrop-filter: blur(0px);
-   user-select: none;
+  user-select: none;
 }
 
 #sideBox .btn:hover button {
@@ -502,8 +502,6 @@ code {
   display: none;
 }
 
-
-
 #portfolioTextBox {
   height: 75%;
   width: 75%;
@@ -535,7 +533,7 @@ code {
 }
 
 #ProjectsMainBox {
-  height: 75%;
+  height: 80%;
   width: 75%;
   border-radius: 60px;
   border: solid white 2px;
@@ -558,7 +556,7 @@ code {
 }
 
 #projectBoxBottom {
-  height: 10%;
+  height: 5%;
   width: 100%;
 }
 
@@ -570,6 +568,9 @@ code {
 #leftBoxTopUpper {
   width: 100%;
   height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 }
 
 #leftBoxTopLower {
@@ -580,30 +581,41 @@ code {
 #rightBoxTop {
   width: 50%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  grid-gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.topGrid {
-  grid-area: top;
-}
-.bottomLeftGrid{
-  grid-area: bottom-left;
-}
-.bottomRightGrid{
-  grid-area: bottom-right;
-}
-#rightBoxTop {
-  grid-template-areas:
-    'top top'
-    'bottom-left bottom-right';
-}
-.topGrid {
-  grid-column: span 2;
+.boxImage {
+  border: 2px solid white;
+  width: 85%;
+  height: 85%;
+  overflow: hidden;
+  object-fit: cover;
 }
 
+.boxImage img {
+  width: 100%; /* Ensures image fits within grid item horizontally */
+  height: 100%; /* Ensures image fits within grid item vertically */
+  object-fit: cover; 
+}
+
+.slider-container, .slides {
+  height: 100% !important;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: .90 !important;
+  color: white !important;
+}
+
+.slick-slide div {
+  height: 100%;
+}
+
+.slick-list, .slick-track {
+  height: 100% !important;
+}
 
 @media only screen and (max-width: 767px) {
   #sidebar {
