@@ -130,12 +130,12 @@ const Portfolio = () => {
                   <div className=' elementHeight w-full flex justify-center items-center select-none flex flex-col'>
                      <div className=" h-1/2 w-full flex justify-center items-center">
                         <div id="portfolioTextBox">
-                          <span id="portLetter" className=" text-5xl font-light">I</span>nside of my portfolio i have writen down a file which tracks all of my progress from the start of my programing 
-                          learning to the last project that i have uploaded on to my portfolio. Not all of the projects here are finished to 100% 
-                          and i didnt go back on finishing them even doe i know how to becouse i wanted to leave them the way they were to 
-                          be able to see my progress throught my learnings. Inside of here i put a link to my GitHub where all of my projects 
-                          are stored and filterd by date. The reason for not adding my projects to this website are just becouse of ease of 
-                          access and readabilty so that there is not a long time needed to look throught all of my projects.
+                          <span id="portLetter" className=" text-5xl font-light">I</span>nside my portfolio, I've compiled a file that tracks my progress from the inception of my programming journey to the latest project uploaded onto my portfolio. Not all projects showcased here are completed to 100%, 
+                          and I deliberately refrained from revisiting them, despite knowing how to do so. 
+                          I chose to leave them in their current state to document my progression throughout my learning process.
+                           Within this file, I've included a link to my GitHub repository, where all my projects are stored and organized chronologically. 
+                           I opted not to add the projects directly to this website for the sake of accessibility and readability. 
+                           This decision ensures that visitors can easily navigate and view my projects without spending excessive time searching through them.
                         </div>
                      </div>
                      <div className=" h-1/2 w-full flex flex-col justify-center items-center">

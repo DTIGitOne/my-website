@@ -33,6 +33,7 @@ const Main = () => {
    const divRef = useRef(null);
    const aboutMeBoxRef = useRef(null);
    const readMoreButton = useRef(null);
+   const aboutMeTextInsideRef = useRef(null);
 
    const toggleSidebar = () => {
       setSidebarOpen(!sidebarOpen);
@@ -93,12 +94,12 @@ const Main = () => {
          aboutMeBoxRef.current.style.height = "75%";
          aboutMeBoxRef.current.style.width = "65%";
          readMoreButton.current.innerHTML = "Read more...";
-         readMoreButton.current.overflow = "hidden";
+         aboutMeTextInsideRef.current.style.overflow = "hidden";
       } else {
          aboutMeBoxRef.current.style.height = "90%";
          aboutMeBoxRef.current.style.width = "80%";
          readMoreButton.current.innerHTML = "go back";
-         readMoreButton.current.overflow = "scroll";
+         aboutMeTextInsideRef.current.style.overflowY = "scroll";
       }
       // Toggle the state
       setReadMoreClicked(!readMoreClicked);
@@ -181,15 +182,22 @@ const Main = () => {
                   <div className='  elementHeight w-full flex justify-center items-center select-none'>
                      <div ref={aboutMeBoxRef} id='aboutMeBox'>
                         <div id='aboutMeTopText' className=' h-1/6 flex items-center p-10 font-normal'> About me</div>
-                        <div id='aboutMeTextInside' className=' h-4/5 w-full fontSizePages font-light overflow-hidden text-ellipsis p-3 select-text'> 
-                        <span className=' font-medium text-3xl'>-M</span>y ipsum, dolor sit amet consectetur adipisicing elit. Maiores quae nostrum voluptatibus, magnam corporis facere. A unde corporis placeat ea labore ipsam, asperiores nemo laudantium hic iste fugit alias voluptates?
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, veniam excepturi reprehenderit, ex obcaecati debitis quaerat laboriosam quis consectetur maiores inventore beatae! Fuga, dicta. Neque laboriosam dolorem rem incidunt fugit!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nesciunt, voluptatem sit molestias odio rerum corporis minus reprehenderit nostrum at labore cupiditate ipsum nulla consequuntur nisi ad porro sapiente accusantium.
-                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat alias, earum error ratione soluta impedit provident animi maiores porro labore perspiciatis qui eaque reiciendis deleniti cumque quas. Sequi, aut rem?
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem aut itaque eos! In voluptate perspiciatis ab atque labore voluptas tenetur officia, repellat delectus culpa reprehenderit praesentium, molestiae beatae necessitatibus?
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae repellendus, non vitae ullam iusto libero adipisci excepturi natus? Mollitia et magnam corporis recusandae minus officia consequuntur est illo. Assumenda.
-                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit consequuntur facere totam commodi necessitatibus facilis officiis itaque ullam soluta quidem sequi at fuga voluptatibus sint quae culpa, sunt illo laborum.
-                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente sed, labore maxime, consequuntur perferendis modi magni ut nemo aliquid sint inventore quas, pariatur delectus quibusdam nam alias. Pariatur, quidem eligendi.
+                        <div ref={aboutMeTextInsideRef} id='aboutMeTextInside' className=' h-4/5 w-full fontSizePages font-light overflow-hidden text-ellipsis p-3 select-text'> 
+                        <span className=' font-medium text-3xl'>-M</span>y name is Damir, and I'm 20 years old. I was born in Sarajevo and have lived there ever since.
+                        <br />
+                        <br />
+                        Currently, I'm a student seeking to broaden my real-life experiences beyond my academic education. I aim to apply my skills and knowledge where they can be most beneficial. My educational background includes electrical engineering with a focus on energy (high school), and I'm currently pursuing a degree in Nutrition at the Faculty of Agriculture and Food Science. Additionally, I'm enrolled in an IT Academy program to become a Frontend React developer.
+                        <br />
+                        <br />
+                        Although I lack prior professional experience, I'm exclusively interested in the IT industry, where I excel. I'm proficient in frontend development and am progressively delving into backend development to become a full-stack developer. The skills I've acquired have been quickly mastered due to the dedication and countless hours I've devoted to learning.
+                        <br />
+                        <br />
+                        I'm known for my strong work ethic and determination to achieve any goals I set for myself. My interests revolve around continuous self-improvement, encompassing various facets of life. I'm passionate about learning new things daily, not only within my areas of interest but also in broader aspects that expand my worldview. Additionally, I prioritize maintaining both mental and physical health, believing that a healthy mind requires a strong body.
+                      
+                        My core beliefs center on hard work, authenticity, and perseverance. I firmly believe that these principles are integral to achieving success and happiness in life.
+                        <br />
+                        <br />
+                        My immediate goal is to join a company that recognizes my potential in programming and values my work ethic and dedication.
                         </div>
                         <div id='readMoreButton' className=' grow flex justify-end items-center text-2xl font-normal p-2 pr-8'><span ref={readMoreButton} className=' cursor-pointer hover:underline' onClick={readMore}>Read more...</span></div>
                      </div>
@@ -208,14 +216,11 @@ const Main = () => {
                         <div id='lookingForTextTop' className=' text-6xl'>What i am looking for</div>
                         <div id='lookingForBox' className=' fontSizePages font-light flex flex-col overflow-hidden'>
                            <span id='lookingForTextBottom' className=' h-full'>
-                             <span className=' font-medium text-3xl'>-I</span> am rem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus consectetur unde nemo, beatae labore libero, vel nulla voluptas error earum ad repellendus molestias assumenda natus accusantium quasi qui. Ex.
-                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem obcaecati quibusdam iste fuga, optio illo? Eius expedita quisquam iste magnam! Quam ad inventore consequatur optio blanditiis at iste aspernatur eaque!
-                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere soluta delectus iure quidem ullam tenetur perferendis deleniti saepe accusamus praesentium odit nemo laboriosam fugiat in nisi, sed tempora. Cumque, eveniet.
+                             <span className=' font-medium text-3xl'>-A</span>
+                             s mentioned earlier, I am seeking a company that acknowledges my programming potential and appreciates my work ethic and dedication. I am not pursuing extravagant benefits or an unrealistic salary for a junior programmer. At present, I am content with the opportunity to work alongside industrious and knowledgeable individuals in the field, from whom I can learn and grow.
                              <br/>
                              <br/>
-                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, facere animi assumenda fugit ad sapiente culpa aspernatur deserunt pariatur nisi magni dignissimos beatae incidunt dolores quis id natus officiis voluptatem.
-                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, explicabo iure dolorum necessitatibus suscipit maxime voluptates soluta fuga nulla ab fugiat laudantium in exercitationem nemo quibusdam dignissimos, voluptatum dolore tenetur?
-
+                             While I am open to exploring other areas within IT, my primary preference lies in leveraging my strengths in Frontend development, where I excel.
                            </span>
                         </div>
                      </div>
@@ -332,7 +337,7 @@ const Main = () => {
                         <div id='boxForSocial' className=' w-3/5 h-full flex justify-around items-center text-3xl text-center'>
                           <span className=' flex justify-center items-center flex-col gap-2' onClick={() => openURLInNewWindow("https://www.linkedin.com/in/damir-taljanovic-2813b02ab/")}>
                            <Linkdinicon />
-                           LinkdIN
+                           LinkedIN
                           </span>
                           <span className=' flex justify-center items-center flex-col gap-2' onClick={() => openURLInNewWindow("https://www.instagram.com/damir.taljanovic/?hl=en")}>
                            <Instagramicon />

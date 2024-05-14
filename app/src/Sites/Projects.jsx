@@ -1,4 +1,4 @@
-import webisteImage1 from '../Images/myWebsite1.PNG'
+import Rotatephoneicon from "../SVGs/RotatePhone";
 import { useRef , useState , useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import { scrollTo } from '../Constants/Constants';
@@ -99,7 +99,9 @@ const Projects = () => {
 
    return (
       <div id="wholePage3" className=" h-full w-full z-30">
-          <div className="mainDrop"></div>
+         <div id='mediaForPotrait'><Rotatephoneicon /></div>
+         <div id="allItems2">
+         <div className="mainDrop"></div>
           <div className='portfolioDrop' ></div>
           <div className='projectsDrop' ></div>
          <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
@@ -117,7 +119,7 @@ const Projects = () => {
                <div ref={section1} id="welcomePageProjects" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                   <div className=' elementHeight w-full flex justify-center items-center select-none'>Projects</div>
                   <div className=' scrollHeight w-full flex justify-center'>
-                      <button onClick={() => scrollTo(section2)} className='flex flex-col gap-2 p-1 items-center select-none'>
+                      <button id="goDownButton" onClick={() => scrollTo(section2)} className='flex flex-col gap-2 p-1 items-center select-none'>
                          <span className=' text-3xl'>more info</span>
                          <svg id='downIcon' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 266.77"><path id='iconClick' fill-rule="nonzero" d="M493.12 3.22c4.3-4.27 11.3-4.3 15.62-.04a10.85 10.85 0 0 1 .05 15.46L263.83 263.55c-4.3 4.28-11.3 4.3-15.63.05L3.21 18.64a10.85 10.85 0 0 1 .05-15.46c4.32-4.26 11.32-4.23 15.62.04L255.99 240.3 493.12 3.22z"/></svg>
                       </button>
@@ -125,7 +127,7 @@ const Projects = () => {
                </div>
                     
                <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-               <div className=' h-48 w-full'></div>
+               <div id="fillElement" className=' h-48 w-full'></div>
                   <div className=' animate-on-scroll elementHeight w-full flex justify-center select-none'>
                      <div id="ProjectsMainBox">
                        <CaraouselMenu />
@@ -167,6 +169,7 @@ const Projects = () => {
                </div>
 
             </div>
+         </div>
          </div>
       </div>
    );
