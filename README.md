@@ -1,3 +1,4 @@
-Design made.
+# This is the code for my own personal website.
 
-Going to start making the site very soon.
+You can check the website out here:
+https://damirtaljanovic.com
