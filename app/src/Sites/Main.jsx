@@ -19,6 +19,8 @@ import { openURLInNewWindow } from '../Constants/Constants';
 import { scrollTo } from '../Constants/Constants';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
+import NodeJsIcon from '../SVGs/Nodejs';
+import TypeScriptIcon from '../SVGs/TypeScript';
 
 const Main = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -267,6 +269,14 @@ const Main = () => {
                        <div className='gridItem'>
                         <Sassicon />
                         SASS  
+                       </div>
+                       <div className='gridItem'>
+                        <NodeJsIcon />
+                        Node.JS
+                       </div>
+                       <div className='gridItem'>
+                        <TypeScriptIcon />
+                        TypeScript
                        </div>
                      </span>
                   </div>

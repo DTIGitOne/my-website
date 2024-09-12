@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import webisteImage1 from '../Images/myWebsite1.PNG'
 import RouletteImage1 from '../Images/Roulette.PNG'
+import DriveMotors from '../Images/DriveMotors.png'
+import AzraWebsite from '../Images/AzraWebsite.PNG'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -56,17 +58,57 @@ const CaraouselMenu = () => {
         <div id="projectBoxTop">
           <div id="leftBoxTop">
             <div id="leftBoxTopUpper">
-              <h2 className=" text-5xl font-normal pl-2">My website</h2>
-              <p className=" font-light text-2xl">This project, initiated in collaboration with a friend, presents a unique twist on the conventional roulette game. While still in its early development stages, I hold strong conviction that it will evolve into an exceptional endeavor upon completion. Currently, the entire project is undergoing a transition from Vanilla code to React, with the backend code not yet uploaded.</p>
+              <h2 className=" text-5xl font-normal pl-2">Neon Roulette</h2>
+              <p className=" font-light text-2xl">This project, initiated in collaboration with a friend, presents a unique twist on the conventional roulette game. It is close to being finished and currently i have linked the code for the frontend part of the web-app. This is my most complicated project that i have made.</p>
             </div>
             <div id="leftBoxTopLower">
-              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://github.com/DTIGitOne/Project-1")}>Check out</button></h3>
+              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://github.com/DTIGitOne/roulette-frontend")}>Check out</button></h3>
             </div>
           </div>
           <div id="rightBoxTop">
             <span className="topGrid flex justify-center items-center">
               <div className="boxImage rounded-2xl">
                 <img className=" imageClass" src={RouletteImage1} alt=""/>
+              </div>
+            </span>
+          </div>
+        </div>
+        </div>
+        <div className=' slides'>
+        <div id="projectBoxTop">
+          <div id="leftBoxTop">
+            <div id="leftBoxTopUpper">
+              <h2 className=" text-5xl font-normal pl-2">Drive Motors</h2>
+              <p className=" font-light text-2xl">This is the first Mern-Stack app that i have made to display my knowledge in programming.Both the frontend and backend code are located on my github. The deployed website link is located inside of the frontend component which i have linked below.</p>
+            </div>
+            <div id="leftBoxTopLower">
+              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://github.com/DTIGitOne/dmotors-frontend2?tab=readme-ov-file")}>Check out</button></h3>
+            </div>
+          </div>
+          <div id="rightBoxTop">
+            <span className="topGrid flex justify-center items-center">
+              <div className="boxImage rounded-2xl">
+                <img className=" imageClass" src={DriveMotors} alt=""/>
+              </div>
+            </span>
+          </div>
+        </div>
+        </div>
+        <div className=' slides'>
+        <div id="projectBoxTop">
+          <div id="leftBoxTop">
+            <div id="leftBoxTopUpper">
+              <h2 className=" text-5xl font-normal pl-2">Azra's Website</h2>
+              <p className=" font-light text-2xl">This is a personal portfolio website which i have made.</p>
+            </div>
+            <div id="leftBoxTopLower">
+              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://adzajlicdedovicazra.netlify.app/")}>Check out</button></h3>
+            </div>
+          </div>
+          <div id="rightBoxTop">
+            <span className="topGrid flex justify-center items-center">
+              <div className="boxImage rounded-2xl">
+                <img className=" imageClass" src={AzraWebsite} alt=""/>
               </div>
             </span>
           </div>
