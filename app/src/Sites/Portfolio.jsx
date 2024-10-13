@@ -126,11 +126,11 @@ const Portfolio = () => {
                </div>
                     
                <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
-               <div className=' h-28 w-full'></div>
+               <div className=' h-20 w-full'></div>
                   <div className=' elementHeight w-full flex justify-center items-center select-none flex flex-col'>
                      <div className=" h-1/2 w-full flex justify-center items-center">
                         <div id="portfolioTextBox">
-                          <span id="portLetter" className=" text-5xl font-light">I</span>nside my portfolio, I've compiled a file that tracks my progress from the inception of my programming journey to the latest project uploaded onto my portfolio. Not all projects showcased here are completed to 100%, 
+                          <span id="portLetter" className=" font-light">I</span>nside my portfolio, I've compiled a file that tracks my progress from the inception of my programming journey to the latest project uploaded onto my portfolio. Not all projects showcased here are completed to 100%, 
                           and I deliberately refrained from revisiting them, despite knowing how to do so. 
                           I chose to leave them in their current state to document my progression throughout my learning process.
                            Within this file, I've included a link to my GitHub repository, where all my projects are stored and organized chronologically. 

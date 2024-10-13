@@ -2,7 +2,7 @@ import { useState } from 'react';
 import webisteImage1 from '../Images/myWebsite1.PNG'
 import RouletteImage1 from '../Images/Roulette.PNG'
 import DriveMotors from '../Images/DriveMotors.png'
-import AzraWebsite from '../Images/AzraWebsite.PNG'
+import AmilaWebsite from '../Images/AmilasWebsite.PNG'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -39,7 +39,7 @@ const CaraouselMenu = () => {
           <div id="leftBoxTop">
             <div id="leftBoxTopUpper">
               <h2 className=" text-5xl font-normal pl-2">My website</h2>
-              <p className=" font-light text-2xl">This is my personal website, the very one you're currently visiting, crafted to showcase my proficiency in frontend development. Every aspect of this website, from coding to design and even drawing all the SVGs, was meticulously created by me. While it may not represent the pinnacle of my capabilities, it offers a glimpse into what I can achieve—especially considering it's one of my initial projects post learning React.</p>
+              <p className=" font-light text-2xl">This is my personal website, This is the current website you are on. I designed and created the whole website my self, inculding drawing the svg's and animations.</p>
             </div>
             <div id="leftBoxTopLower">
               <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://github.com/DTIGitOne/my-website")}>Check out</button></h3>
@@ -98,17 +98,17 @@ const CaraouselMenu = () => {
         <div id="projectBoxTop">
           <div id="leftBoxTop">
             <div id="leftBoxTopUpper">
-              <h2 className=" text-5xl font-normal pl-2">Azra's Website</h2>
+              <h2 className=" text-5xl font-normal pl-2">Amila's Website</h2>
               <p className=" font-light text-2xl">This is a personal portfolio website which i have made.</p>
             </div>
             <div id="leftBoxTopLower">
-              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://adzajlicdedovicazra.netlify.app/")}>Check out</button></h3>
+              <h3 className=" text-3xl font-medium"><button onClick={() => openURLInNewWindow("https://amilataljanovic.vercel.app")}>Check out</button></h3>
             </div>
           </div>
           <div id="rightBoxTop">
             <span className="topGrid flex justify-center items-center">
               <div className="boxImage rounded-2xl">
-                <img className=" imageClass" src={AzraWebsite} alt=""/>
+                <img className=" imageClass" src={AmilaWebsite} alt=""/>
               </div>
             </span>
           </div>

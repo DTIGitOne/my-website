@@ -3,6 +3,15 @@
    width: 40%;
 }
 
+.cls-1111, .cls-2222 {
+  fill: #fff;
+  stroke-width: 0px;
+}
+
+.cls-2222 {
+  opacity: .18;
+}
+
 @media only screen and (max-width: 767px) {
   .iconSize {
     height: 55%;

@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
 import NodeJsIcon from '../SVGs/Nodejs';
 import TypeScriptIcon from '../SVGs/TypeScript';
+import NextJsIcon from '../SVGs/NextJS';
 
 const Main = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -178,7 +179,7 @@ const Main = () => {
                       </button>
                   </div>
                </div>
-                    
+               
                <div ref={section2} id="aboutMe" className="full-screen-section flex flex-col font-thin text-white text-8xl z-30">
                   <div className=' h-28 w-full'></div>
                   <div className='  elementHeight w-full flex justify-center items-center select-none'>
@@ -277,6 +278,10 @@ const Main = () => {
                        <div className='gridItem'>
                         <TypeScriptIcon />
                         TypeScript
+                       </div>
+                       <div className='gridItem'>
+                        <NextJsIcon />
+                        Next.JS
                        </div>
                      </span>
                   </div>
